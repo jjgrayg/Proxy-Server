@@ -56,3 +56,6 @@ compile_commands.json
 # Program created files
 cache*
 log*
+
+# Pem files
+*pem*
