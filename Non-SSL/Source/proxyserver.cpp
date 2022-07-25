@@ -107,14 +107,13 @@ string ProxyServer::response_to_str_buff(con_handle_t con_handle, size_t buff_si
         str = string(con_handle->response_data_, con_handle->response_data_ + (buff_size == 0 ? MAX_BUFF_SIZE : buff_size));
     }
     try {
-        con_handle->request_ = str;
+        con_handle->response_ = str;
     }
     catch (std::logic_error const& e) {
         write_to_outputs("<span style=\"color:red\">!!ERROR!! </span>" + string(e.what()) + " at line #" + std::to_string(__LINE__) + "\n");
-        con_handle->request_ = "";
+        con_handle->response_ = "";
     }
 
-    con_handle->response_ = str;
     con_handle->res_size_ = str.size();
     return str;
 }
