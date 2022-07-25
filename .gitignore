@@ -54,7 +54,8 @@ compile_commands.json
 *_qmlcache.qrc
 
 # Program created files
-cache*
+cache
+cache_table.db
 log*
 
 # Pem files
